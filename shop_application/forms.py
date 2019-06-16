@@ -21,8 +21,6 @@ class RegisterUsersForm(ModelForm):
     email_address = forms.EmailField()
     contact_numbers = forms.IntegerField(widget=forms.TextInput(attrs={'class': 'form-control'}))
 
-
-
     class Meta:
         model = RegisterUsers
         fields = [
