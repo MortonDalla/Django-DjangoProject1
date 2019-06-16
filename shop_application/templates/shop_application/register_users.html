@@ -1,0 +1,5 @@
+<form method='POST'>{% csrf_token %}
+    {{ form.as_p }}
+    <!--<input type='text' name='tittle' placeholder="your tittle">-->
+    <input type='submit' value='Save'/>
+</form>
