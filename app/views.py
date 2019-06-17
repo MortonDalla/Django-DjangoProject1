@@ -6,6 +6,8 @@ from django.shortcuts import render
 from django.http import HttpRequest
 from django.template import RequestContext
 from datetime import datetime
+from.forms import BootstrapAuthenticationForm
+from django_proct1_shoppig.shop_application.models import RegisterUsers
 
 def home(request):
     """Renders the home page."""
@@ -44,3 +46,29 @@ def about(request):
             'year':datetime.now().year,
         }
     )
+
+def login(request):
+    queryset = RegisterUsers.objects.all()
+    assert isinstance(request, HttpRequest)
+
+
+
+    return render(
+        request,
+        'app/login.html',
+        {
+            'title':'Contact',
+            'context':queryset,
+            'year':datetime.now().year,
+        }
+    )
+
+
+    # queryset = BootstrapAuthenticationForm.objects.all()
+    # if request.method == "POST":
+    #     form = BootstrapAuthenticationForm(request.POST)
+    # context = {
+    # 'posts': BootstrapAuthenticationForm.objects.all()
+    # }
+    #
+    # return render(request, "app/login.html", context)

@@ -10,16 +10,21 @@ from django.utils.translation import ugettext_lazy as _
 
 class RegisterUsersForm(ModelForm):
     first_name = forms.CharField(required=True, widget=forms.TextInput(attrs={"placeholder": "First Name"}))
+
     last_name = forms.CharField(required=True, widget=forms.TextInput(attrs={"placeholder": "Last Name"}))
+
     user_name = forms.CharField(required=True, widget=forms.TextInput(attrs={"placeholder": "User Name"}))
+
     password = forms.PasswordInput()
+
     description = forms.CharField(widget=forms.Textarea(
         attrs={
-            'cols': 100,
-            'rows': 12}
+            'cols': 70,
+            'rows': 9}
     ))
     email_address = forms.EmailField()
-    contact_numbers = forms.IntegerField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+
+    contact_numbers = forms.IntegerField(widget=forms.TextInput(attrs={"placeholder": "Phone Numbers"}))
 
     class Meta:
         model = RegisterUsers
@@ -44,3 +49,10 @@ class BootstrapAuthenticationForm(AuthenticationForm):
                                widget=forms.PasswordInput({
                                    'class': 'form-control',
                                    'placeholder':'Password'}))
+
+    # class Meta:
+    #     model = RegisterUsers
+    #     fields = [
+    #         'first_name',
+    #         'password',
+    #         ]

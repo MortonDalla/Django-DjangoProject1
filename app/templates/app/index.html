@@ -1,43 +1,328 @@
-{% extends "app/layout.html" %}
+<!--{% extends "app/layout.html" %}-->
 
 {% block content %}
 
-<div class="main-container">
-    <div class="cloud-image">
-        <img src="../../static/app/img/successCloudNew.svg" />
-    </div>
-    <div class="content">
-        <div class="tweet-container">
-            <a href="http://twitter.com/intent/tweet/?text=I%20just%20created%20a%20new%20Python%20Django%20website%20on%20Azure%20using%20Azure%20DevOps%20Project&hashtags=AzureDevOpsProject%2CVSTS%20%40Azure%20%40VSTS">
-                <img src="../../static/app/img/tweetThis.svg" />
-            </a>            
-        </div>
-        <div class="content-body">
-            <div class="success-text">Success!</div>
-            <div class="description line-1"> Azure DevOps Project has been successfully setup</div>
-            <div class="description line-2"> Your Python Django app is up and running on Azure</div>
-        </div>
-    </div>
-</div>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Get started right away </h2>
-        <p>
-            Clone your code repository and start developing your application on IDE of your choice
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?linkid=862409">Learn more &raquo;</a></p>
+    <!-- Title  -->
+    <title>Morton's - Small_Businesses_Online_Shopping_Centre | Home</title>
+
+
+
+    {% load staticfiles %}
+
+    <!-- Favicon  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'shop_application/img/core-img/favicon.ico' %}" />
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'shop_application/css/core-style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'shop_application/style.css' %}" />
+
+</head>
+
+<body>
+{% load staticfiles %}
+    <!-- Search Wrapper Area Start -->
+    <div class="search-wrapper section-padding-100">
+        <div class="search-close">
+            <i class="fa fa-close" aria-hidden="true"></i>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="search-content">
+                        <form action="#" method="get">
+                            <input type="search" name="search" id="search" placeholder="Type your keyword...">
+                            <button type="submit"> <img src="../../shop_application/img/core-img/search.png" /> </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Continuous Delivery</h2>
-        <p>View your CI/CD pipeline on Visual Studio Team Services and customize it as per your needs</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?linkid=862410">Learn more &raquo;</a></p>
+    <!-- Search Wrapper Area End -->
+
+    <!-- ##### Main Content Wrapper Start ##### -->
+    <div class="main-content-wrapper d-flex clearfix">
+
+        <!-- Mobile Nav (max width 767px)-->
+        <div class="mobile-nav">
+            <!-- Navbar Brand -->
+            <div class="amado-navbar-brand">
+                <a href="{% url 'home' %}"><img src="../../static/shop_application/img/core-img/boy.svg" /></a>
+            </div>
+            <!-- Navbar Toggler -->
+            <div class="amado-navbar-toggler">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+
+        <!-- Header Area Start -->
+        <header class="header-area clearfix">
+            <!-- Close Icon -->
+            <div class="nav-close">
+                <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+            <!-- Logo -->
+            <div class="logo">
+                <a href="{% url 'home' %}"><img src="../../static/shop_application/img/core-img/boy.svg" /></a>
+            </div>
+            <!-- Amado Nav -->
+            <nav class="amado-nav">
+                <ul>
+                    <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'register' %}">Register</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    <li><a href="{% url 'shop' %}">Shops</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="product-details.html">Product</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                    <li><a href="checkout.html">Checkout</a></li>
+                </ul>
+            </nav>
+            <!-- Button Group -->
+            <div class="amado-btn-group mt-30 mb-100">
+                <a href="#" class="btn amado-btn mb-15">%Discount%</a>
+                <a href="#" class="btn amado-btn active">New this week</a>
+            </div>
+            <!-- Cart Menu -->
+            <div class="cart-fav-search mb-100"> <img src="../../static/shop_application/img/core-img/cart.png" />
+                <a href="#" class="fav-nav"><img src="../../static/shop_application/img/core-img/favorites.png" /> Favourite</a>
+                <a href="#" class="search-nav"><img src="../../static/shop_application/img/core-img/search.png" /> Search</a>
+            </div>
+            <!-- Social Button -->
+            <div class="social-info d-flex justify-content-between">
+                <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            </div>
+        </header>
+        <!-- Header Area End -->
+
+        <!-- Product Catagories Area Start -->
+        <div class="products-catagories-area clearfix">
+            <div class="amado-pro-catagory clearfix">
+
+                <!-- Single Catagory -->
+                <div class="single-products-catagory clearfix">
+                    <a href="shop.html">
+                        <img src="../../static/shop_application/img/bg-img/1.jpg" />
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line"></div>
+                            <p>Newtown Junction Mall</p>
+                            <h4>Deesus</h4>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Single Catagory -->
+                <div class="single-products-catagory clearfix">
+                    <a href="shop.html">
+                        <img src="../../static/shop_application/img/bg-img/2.jpg" />
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line"></div>
+                            <p>Giyani section E</p>
+                            <h4>Dress-Up Friday Clothing</h4>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Single Catagory -->
+                <div class="single-products-catagory clearfix">
+                    <a href="shop.html">
+                        <img src="../../static/shop_application/img/bg-img/3.jpg" />
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line"></div>
+                            <p>Newtown Junction Mall0</p>
+                            <h4>Bathu Tekkies</h4>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Single Catagory -->
+                <div class="single-products-catagory clearfix">
+                    <a href="shop.html">
+                        <img src="../../static/shop_application/img/bg-img/4.jpg" />
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line"></div>
+                            <p>Giyani Section A</p>
+                            <h4>Ritavi Eats</h4>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Single Catagory -->
+                <div class="single-products-catagory clearfix">
+                    <a href="shop.html">
+                        <img src="../../static/shop_application/img/bg-img/5.jpg" />
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line"></div>
+                            <p>Newtown Junction Mall</p>
+                            <h4>M & M Renewal Classic Wear</h4>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Single Catagory -->
+                <div class="single-products-catagory clearfix">
+                    <a href="shop.html">
+                        <img src="../../static/shop_application/img/bg-img/6.jpg" />
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line"></div>
+                            <p>Pta Madira Are</p>
+                            <h4>Obama Tables</h4>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Single Catagory -->
+                <div class="single-products-catagory clearfix">
+                    <a href="shop.html">
+                        <img src="../../static/shop_application/img/bg-img/7.jpg" />
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line"></div>
+                            <p>Midrand Constantia Center</p>
+                            <h4>Metallic Contrubutors</h4>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Single Catagory -->
+                <div class="single-products-catagory clearfix">
+                    <a href="shop.html">
+                        <img src="../../static/shop_application/img/bg-img/8.jpg" />
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line"></div>
+                            <p>Polokwane Turfloop</p>
+                            <h4>Jimbro Pty(Ltd)</h4>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Single Catagory -->
+                <div class="single-products-catagory clearfix">
+                    <a href="shop.html">
+                        <img src="../../static/shop_application/img/bg-img/9.jpg" />
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line"></div>
+                            <p>Newtown Junction Mall</p>
+                            <h4>Morton_Dalla Closthing</h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Product Catagories Area End -->
     </div>
-    <div class="col-md-4">
-        <h2>Azure DevOps Project</h2>
-        <p>Learn more about all you can do with Azure DevOps project by visiting the documentation</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?linkid=862126">Learn more &raquo;</a></p>
-    </div>
-</div>
+    <!-- ##### Main Content Wrapper End ##### -->
+
+    <!-- ##### Newsletter Area Start ##### -->
+    <section class="newsletter-area section-padding-100-0">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Newsletter Text -->
+                <div class="col-12 col-lg-6 col-xl-7">
+                    <div class="newsletter-text mb-100">
+                        <h2>Subscribe for a <span>25% Discount</span></h2>
+                        <p>Nulla ac convallis lorem, eget euismod nisl. Donec in libero sit amet mi vulputate consectetur. Donec auctor interdum purus, ac finibus massa bibendum nec.</p>
+                    </div>
+                </div>
+                <!-- Newsletter Form -->
+                <div class="col-12 col-lg-6 col-xl-5">
+                    <div class="newsletter-form mb-100">
+                        <form action="#" method="post">
+                            <input type="email" name="email" class="nl-email" placeholder="Your E-mail">
+                            <input type="submit" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Newsletter Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer_area clearfix">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Single Widget Area -->
+                <div class="col-12 col-lg-4">
+                    <div class="single_widget_area">
+                        <!-- Logo -->
+                        <div class="footer-logo mr-50">
+                            <a href="index.html"><img src="../../static/shop_application/img/core-img/logo2.png" /></a>
+                        </div>
+
+                        <p class="copywrite">
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        </p>
+                    </div>
+                </div>
+                <!-- Single Widget Area -->
+                <div class="col-12 col-lg-8">
+                    <div class="single_widget_area">
+                        <!-- Footer Menu -->
+                        <div class="footer_menu">
+                            <nav class="navbar navbar-expand-lg justify-content-end">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#footerNavContent" aria-controls="footerNavContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+                                <div class="collapse navbar-collapse" id="footerNavContent">
+                                    <ul class="navbar-nav ml-auto">
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="{% url 'home' %}">Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link"  href="{% url 'shop' %}">Shop</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{% url 'products' %}">Product</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{% url 'checkout' %}">Checkout</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area End ##### -->
+{% endblock %}
+
+ {% block scripts %}
+
+    {% load staticfiles %}
+    <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
+    <script src="{% static 'shop_application/js/jquery/jquery-2.2.4.min.js' %}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'shop_application/js/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'shop_application/js/bootstrap.min.js' %}"></script>
+    <!-- Plugins js -->
+    <script src="{% static 'shop_application/js/plugins.js' %}"></script>
+    <!-- Active js -->
+    <script src="{% static 'shop_application/js/active.js' %}"></script>
+
+</body>
+
+</html>
 
 {% endblock %}

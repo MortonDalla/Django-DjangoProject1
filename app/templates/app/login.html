@@ -8,12 +8,23 @@
         <section id="loginForm">
             <form action="." method="post" class="form-horizontal">
                 {% csrf_token %}
-                <h4>Use a local account to log in.</h4>
+                <h4>Use a local account to login.</h4>
+                <p>{{ context.username }}</p>
+
+
                 <hr />
                 <div class="form-group">
                     <label for="id_username" class="col-md-2 control-label">User name</label>
                     <div class="col-md-10">
                         {{ form.username }}
+                        <!--{% if username in objects  %}-->
+                            <!--<h1> Morton is True</h1>-->
+                        <!--{% else %}-->
+                            <!--<h1>{{ forloop.counter }} - {{ morton }}</h1>-->
+                        <!--{% endif %}-->
+
+
+
                     </div>
                 </div>
                 <div class="form-group">

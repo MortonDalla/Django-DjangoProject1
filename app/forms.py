@@ -9,6 +9,8 @@ from.models import RegisterUsers
 
 class BootstrapAuthenticationForm(AuthenticationForm):
     """Authentication form which uses boostrap CSS."""
+    users_enrolled = RegisterUsers.objects.all()
+    print(users_enrolled)
     username = forms.CharField(max_length=254,
                                widget=forms.TextInput({
                                    'class': 'form-control',
@@ -17,12 +19,16 @@ class BootstrapAuthenticationForm(AuthenticationForm):
     password = forms.CharField(label=_("Password"),
                                widget=forms.PasswordInput({
                                    'class': 'form-control',
-                                   'placeholder':'Password'}))
+                                   'placeholder': 'Password'}))
+
+    class Meta:
+        model = RegisterUsers
+        fields = [
+            'username',
+            'password',
+            ]
 
 
-#
-#         mynew_tittle = request.POST.get('tittle')
-#         Product.objects.create(tittle=mynew_tittle)
 class Register_Users(forms.ModelForm):
     user_name = forms.CharField(required=True, widget=forms.TextInput(attrs={"placeholder": "User Name"}))
     password = forms.PasswordInput()

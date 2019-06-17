@@ -20,6 +20,11 @@ urlpatterns = [
     url(r'^', include('shop_application.urls')),
     url(r'^contact$', shop_application.views.contact, name='contact'),
     url(r'^about', shop_application.views.about, name='about'),
+    url(r'^shop', shop_application.views.shop, name='shop'),
+    url(r'^products', shop_application.views.product, name='products'),
+    url(r'^cart', shop_application.views.product, name='cart'),
+    url(r'^checkout', shop_application.views.checkout, name='checkout'),
+    url(r'^register', shop_application.views.user_registrations, name='register'),
     url(r'^login/$',
         django.contrib.auth.views.login,
         {
