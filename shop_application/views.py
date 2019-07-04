@@ -12,11 +12,11 @@ from django.contrib.auth.decorators import login_required
 
 
 from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.decorators import login_required
 
 from django import forms
 
-@login_required
+# @login_required
 def home(request):
     """Renders the home page."""
     assert isinstance(request, HttpRequest)
@@ -107,43 +107,8 @@ def checkout(request):
         }
     )
 
-
-# def user_registrations(request):
-#     if request.method == "POST":
-#         form = RegisterUsersForm(request.POST)
-#         if form.is_valid():
-#             add_shop_application_item = form.save(commit=False) #commit - the data has never been stored in the DB
-#             add_shop_application_item.save()
-#
-#             userobj = form.cleaned_data
-#
-#             first_name = userobj['first_name']
-#             last_name = userobj['last_name']
-#             user_name = userobj['user_name']
-#             password = userobj['password']
-#             email_address = userobj['email_address']
-#             description = userobj['description']
-#             contact_numbers = userobj['contact_numbers']
-#
-#             if not (RegisterUsers.objects.filter(user_name=user_name).exists() or RegisterUsers.objects.filter(email_address=email_address).exists()):
-#                 RegisterUsers.objects.create_user(user_name, email_address, password)
-#                 user = BootstrapAuthenticationForm(user_name=user_name, password=password)
-#                 LogoutView(request, user)
-#                 return HttpResponseRedirect('/')
-#             else:
-#                 form = RegisterUsersForm
-#                 #raise forms.ValidationError('Looks like a username with that email or password already exists')
-#
-#             messages.success(request, f'Your account has been created! You are now able to log in')
-#             return redirect('login')
-#             form = RegisterUsersForm
-#     else:
-#         form = RegisterUsersForm
-#     return render(request, "shop_application/register_users.html", {'form': form})
-
-
 def loginView(request):
-    return render(request, "register/register.html")
+    return render(request, "registration/register.html")
 
 def user_registrations(request):
     if request.method == "POST":
