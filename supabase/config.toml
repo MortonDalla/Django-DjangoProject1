@@ -1,0 +1,37 @@
+# supabase/config.toml
+
+[project_id]
+# This will be automatically filled when you run `supabase link`.
+id = "your-project-id"
+
+[api]
+port = 8000
+# schemas = ["public", "storage", "graphql"]
+# extra_search_path = ["public"]
+
+[db]
+port = 5432
+# major_version = 15
+
+[studio]
+port = 8082
+
+# #############################################################################
+# ### Edge Functions
+# #############################################################################
+
+[functions.sendNotification]
+# handler = "file://path/to/handler.ts"  # For local testing, not needed for deployment
+# verify_jwt = true # Default is true, can be overridden per function
+
+[functions.bulkImportEntities]
+# handler = "file://path/to/handler.ts"
+# verify_jwt = true
+
+[functions.webhookTrigger]
+# handler = "file://path/to/handler.ts"
+# verify_jwt = true
+
+[functions.generateAnalytics]
+# handler = "file://path/to/handler.ts"
+# verify_jwt = true
